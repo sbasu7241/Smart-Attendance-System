@@ -9,9 +9,7 @@ from firebase import firebase
 video_capture = cv2.VideoCapture(0)
     
     
-# Create a woorksheet
-#book=Workbook()
-#sheet=book.active
+
     
 # Load images.
     
@@ -45,6 +43,7 @@ known_face_names = [
         
         "Shreyansh",
         "Soumyadeep",
+	"Jitesh",
         "Bindu",
         "Harsh",
         "Mrigyen"
@@ -91,11 +90,8 @@ while True:
         if True in matches:
             first_match_index = matches.index(True)
             name = known_face_names[first_match_index]
-            # Assign attendance
-            #if int(name) in range(1,61):
-            #    sheet.cell(row=int(name), column=int(today)).value = "Present"
-            #else:
-            #    pass
+         
+      
     face_names.append(name)
     
     process_this_frame = not process_this_frame
@@ -119,9 +115,7 @@ while True:
     
     # Display the resulting image
     cv2.imshow('Video', frame)
-        
-    # Save Woorksheet as present month
-    # book.save(str(month)+'.xlsx')
+   
     
 	
     # Integrate with firebase
